@@ -31,7 +31,6 @@ nexmo
 novo
 playmobile
 plivo
-pushinho
 redrabbit
 shaqodoon
 smscentral

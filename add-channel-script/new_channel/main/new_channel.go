@@ -9,6 +9,8 @@ import (
 	"os"
 )
 
+const filePath = "../../../../cmd/courier/main.go"
+
 func fileToPath(filePath string) ([]string, error) {
 	file, err := os.Open(filePath)
 
@@ -122,10 +124,11 @@ func getDirectories() []string {
 	}
 
 	defer newFile.Close()
-	directoriesPath := "../../../handlers"
+	directoriesPath := "../../../../handlers"
 	actualDirectories, err := ioutil.ReadDir(directoriesPath)
 
 	if err != nil {
+		fmt.Println("ruim")
 		log.Fatal(err)
 	}
 
@@ -159,14 +162,12 @@ func saveNewChannels(newChannels []string) {
 	if err != nil {
 		fmt.Println(err)
 	}
-
 	fmt.Println("New channels list updated with success!")
 }
 
 func main() {
 	channelsList := getDirectories()
 	saveNewChannels(channelsList)
-	const filePath = "../../../cmd/courier/main.go"
 	for i := 0; i < len(channelsList); i++ {
 
 		channelPath := "github.com/nyaruka/courier/handlers/" + channelsList[i]
