@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-const filePath = "../../../../cmd/courier/main.go"
+const filePath = "cmd/courier/main.go"
 
 func fileToPath(filePath string) ([]string, error) {
 	file, err := os.Open(filePath)
@@ -124,7 +124,7 @@ func getDirectories() []string {
 	}
 
 	defer newFile.Close()
-	directoriesPath := "../../../../handlers"
+	directoriesPath := "handlers/"
 	actualDirectories, err := ioutil.ReadDir(directoriesPath)
 
 	if err != nil {
