@@ -128,7 +128,6 @@ func getDirectories() []string {
 	actualDirectories, err := ioutil.ReadDir(directoriesPath)
 
 	if err != nil {
-		fmt.Println("ruim")
 		log.Fatal(err)
 	}
 
